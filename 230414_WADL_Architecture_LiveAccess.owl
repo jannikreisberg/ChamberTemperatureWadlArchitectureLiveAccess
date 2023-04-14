@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.hsu-ifa.de/ontologies/airbus/frp/rtm#"
+     xml:base="http://www.hsu-ifa.de/ontologies/airbus/frp/rtm"
+     xmlns:frp="http://www.airbus.com/ctc/frp/#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rtm="http://www.airbus.com/ctc/frp/rtm#"
+     xmlns:ssn="http://www.w3.org/ns/ssn/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:WADL="http://www.hsu-ifa.de/ontologies/WADL#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:sosa="http://www.w3.org/ns/sosa/"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/"
+     xmlns:VDI2206="http://www.hsu-ifa.de/ontologies/VDI2206#"
+     xmlns:VDI3682="http://www.hsu-ifa.de/ontologies/VDI3682#"
+     xmlns:oboInOwl="oboInOwl:"
+     xmlns:DINEN61360="http://www.hsu-ifa.de/ontologies/DINEN61360#">
+    <owl:Ontology rdf:about="http://www.airbus.com/ctc/frp/">
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/ssn/"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-WADL/v1.4.2/WADL.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hasSimpleResult -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/sosa/hasSimpleResult"/>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.airbus.com/ctc/frp/#hasUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.airbus.com/ctc/frp/#hasUnit">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/UO_0000000"/>
+    </owl:ObjectProperty>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- http://www.airbus.com/ctc/frp/#ChamberTemperatureLive -->
+
+    <owl:NamedIndividual rdf:about="http://www.airbus.com/ctc/frp/#ChamberTemperatureLive">
+        <rdf:type rdf:resource="http://www.airbus.com/ctc/frp/#LiveMachineData"/>
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/DINEN61360#Data_Element"/>
+        <WADL:hasParameter rdf:resource="http://www.airbus.com/ctc/frp/#ChamberTemperatureLiveAccess"/>
+        <WADL:hasParameter rdf:resource="http://www.airbus.com/ctc/frp/#token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.airbus.com/ctc/frp/#ChamberTemperatureLiveAccess -->
+
+    <owl:NamedIndividual rdf:about="http://www.airbus.com/ctc/frp/#ChamberTemperatureLiveAccess">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/WADL#QueryParameter"/>
+        <WADL:hasPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://192.168.30.50:5588/v1/printer/chambertemperature?token=</WADL:hasPath>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.airbus.com/ctc/frp/#ChamberTemperatureLiveResponse -->
+
+    <owl:NamedIndividual rdf:about="http://www.airbus.com/ctc/frp/#ChamberTemperatureLiveResponse">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/WADL#200"/>
+        <frp:hasUnit rdf:resource="http://www.airbus.com/ctc/frp/#Celsius"/>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{ &quot;data&quot;:
+{ &quot;current_temperature&quot;: ,
+ &quot;target_temperature&quot;: },
+    &quot;status&quot;: ,
+    &quot;timestamp&quot;: &quot;&quot; }</sosa:hasSimpleResult>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.airbus.com/ctc/frp/#CtcIntamsysFunmatPro610 -->
+
+    <owl:NamedIndividual rdf:about="http://www.airbus.com/ctc/frp/#CtcIntamsysFunmatPro610">
+        <rdf:type rdf:resource="http://www.airbus.com/ctc/frp/#AMPrinter"/>
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/WADL#Resource"/>
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+        <VDI3682:TechnicalResourceIsAssignedToProcessOperator rdf:resource="http://www.airbus.com/ctc/frp/#AMProcess2"/>
+        <WADL:hasMethod rdf:resource="http://www.airbus.com/ctc/frp/#GetChamberTemperatureHistorical"/>
+        <WADL:hasMethod rdf:resource="http://www.airbus.com/ctc/frp/#GetChamberTemperatureLive"/>
+        <WADL:hasMethod rdf:resource="http://www.airbus.com/ctc/frp/#GetUserAuthorization"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.airbus.com/ctc/frp/#GetChamberTemperatureLive -->
+
+    <owl:NamedIndividual rdf:about="http://www.airbus.com/ctc/frp/#GetChamberTemperatureLive">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/WADL#GET"/>
+        <WADL:hasRequest rdf:resource="http://www.airbus.com/ctc/frp/#ChamberTemperatureLive"/>
+        <WADL:hasResponse rdf:resource="http://www.airbus.com/ctc/frp/#ChamberTemperatureLiveResponse"/>
+    </owl:NamedIndividual>
+    
+	<!-- http://www.airbus.com/ctc/frp/#token -->
+
+    <owl:NamedIndividual rdf:about="http://www.airbus.com/ctc/frp/#token">
+        <rdf:type rdf:resource="http://www.hsu-ifa.de/ontologies/WADL#Parameter"/>
+        <WADL:hasPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">token_string</WADL:hasPath>
+    </owl:NamedIndividual>
+</rdf:RDF>
